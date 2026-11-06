@@ -128,6 +128,9 @@ def seminer(fname, w, h):
     inner = re.search(r"<x-dc>(.*)</x-dc>", src, re.S).group(1)
     inner = re.sub(r"<helmet>.*?</helmet>", "", inner, flags=re.S)
     inner = inner.replace("{{lacivert}}", "#0E1B3D").replace("{{vurgu}}", "#F2B33D")
+    # 4-5 Kasim: "Sahadan deneyimler" programdan cikti -> o maddeyi kaldir
+    inner, n = re.subn(r'<div style="display: flex; align-items: flex-start; gap: \d+px">\s*<span[^>]*></span>\s*<span[^>]*><strong[^>]*>Sahadan deneyimler:</strong>.*?</span>\s*</div>', '', inner, flags=re.S)
+    assert n == 1, "Sahadan deneyimler maddesi bulunamadi"
     return f'''<!doctype html><html lang="tr"><head><meta charset="utf-8">
 <link rel="stylesheet" href="file://{D}/base.css"><style>body{{margin:0}}</style></head>
 <body><div class="sem" style="width:{w}px;height:{h}px">{inner}</div></body></html>'''
