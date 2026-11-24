@@ -20,3 +20,19 @@ curl -sfL -o PlexMono-SemiBold.ttf "$B/ibmplexmono/IBMPlexMono-SemiBold.ttf"
 Sonra `build.py` içindeki kart fonksiyonlarını örnek alıp yeni kart yaz; Playwright (Python) ile işle.
 `build.py` içindeki seminer işleri, başka bir tasarım tuvalinden okunan dosyalara bağlı; yeni kartlarda o kısım gerekmez.
 Kartı yayına koymadan önce PNG'yi açıp taşma, çakışma ve font yüklenmesini kontrol et.
+
+## v3 — Kampanya tarzı (24.11.2026'dan itibaren ASIL ŞABLON budur)
+Mustafa'nın geri bildirimi: "renkler vs hepsi birbirinin aynısı, senden çıktığı belli oluyor; farklı farklı ve alımlı yap."
+Referans: `ornekler/` klasöründeki kendi hikâye reklamları. Örnek kod: `sablon/kampanya.py` (A = zümrüt gece, B = krem-bordo).
+
+Kurallar:
+- **Her gönderi ayrı renk dünyası.** Arka arkaya iki gönderide aynı palet olmaz. Palet havuzu: zümrüt gece (yeşil + nane→sarı), krem + bordo/mercan, gece mavisi + turuncu, mor + sarı, petrol + mercan, antrasit + neon yeşil, bordo + altın. Lacivert-amber "kurumsal" kart yalnız arada bir.
+- **Yerleşim de değişir.** Arketipler: 3B eğik ekran + telefon kolajı; "önce → sonra" akışı (iki kart + kesik ok); dev rakam / istatistik; tek telefon kahraman; çip ızgarası + büyük ürün ekranı.
+- Başlık: Bricolage Grotesque 800, `font-stretch:75%` (dar), 110–136 px, 2–3 satır; bir satır degrade dolgulu; altına el çizimi çift çizgi.
+- El yazısı vurgu (Kaushan Script) bir kısa ifade için: "rota hazır!", "e-Vizite'ye girmeden!", "daha ötesi".
+- Noktalı doku (24 px ızgara) + köşelerde yumuşak ışık.
+- Gerçek logo: `sablon/logo_white.png` (koyu zemin), `sablon/logo_navy.png` (açık zemin), sağ üst.
+- Yüzen beyaz etiketler (ikonlu), "YENİ MODÜL" hapı, özellik çipleri (tik işaretli hap), en altta büyük degrade "Ücretsiz demo" bandı + yuvarlak ok butonu; alt satır: "Kendi verinizle canlı gösterim · 0 541 796 58 10".
+- Mümkünse `ekran/` klasöründeki gerçek ekran görüntülerini kullan (eğik, gölgeli). Çizim panel sadece gerçek görüntü yoksa.
+- Yerel detay: Denizli semt adları (Sırakapılar, Bağbaşı, Gerzele, Kınıklı, Çamlaraltı), tekstil bölümleri (Dokuma, Konfeksiyon, Boyahane).
+- Fontlar: yukarıdakilere ek `curl -sfL -o /tmp/fonts2/KaushanScript.ttf "$B/kaushanscript/KaushanScript-Regular.ttf"`.
