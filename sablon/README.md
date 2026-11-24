@@ -36,3 +36,9 @@ Kurallar:
 - Mümkünse `ekran/` klasöründeki gerçek ekran görüntülerini kullan (eğik, gölgeli). Çizim panel sadece gerçek görüntü yoksa.
 - Yerel detay: Denizli semt adları (Sırakapılar, Bağbaşı, Gerzele, Kınıklı, Çamlaraltı), tekstil bölümleri (Dokuma, Konfeksiyon, Boyahane).
 - Fontlar: yukarıdakilere ek `curl -sfL -o /tmp/fonts2/KaushanScript.ttf "$B/kaushanscript/KaushanScript-Regular.ttf"`.
+
+## Gerçek ekran görüntüsü kullanımı (24.11.2026)
+`ekran/` klasöründe Mustafa'nın gönderdiği gerçek ekranlardan kesilmiş görseller durur (ör. `ekran/servis_planlama_harita.png`).
+Örnek kullanım: `sablon/servis_v3.py` (eğik, beyaz çerçeveli gerçek harita + günlük liste kâğıdı + yüzen etiket).
+Kesim kuralı: personel adresi, telefon, TC gibi kişisel alanlar görselde kalmaz; harita kullanılıyorsa "© OpenStreetMap katkıcıları" yazısı görünür kalır.
+Mustafa'nın vurgulanmasını istediği ifadeler (Servis Planlama): "Otomatik personel ataması", "Haritada otomatik güzergâh".
