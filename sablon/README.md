@@ -42,3 +42,13 @@ Kurallar:
 Örnek kullanım: `sablon/servis_v3.py` (eğik, beyaz çerçeveli gerçek harita + günlük liste kâğıdı + yüzen etiket).
 Kesim kuralı: personel adresi, telefon, TC gibi kişisel alanlar görselde kalmaz; harita kullanılıyorsa "© OpenStreetMap katkıcıları" yazısı görünür kalır.
 Mustafa'nın vurgulanmasını istediği ifadeler (Servis Planlama): "Otomatik personel ataması", "Haritada otomatik güzergâh".
+
+## Yıllık İzin Planlama kartı (27.11.2026) ve palet günlüğü
+`sablon/izin_v3.py`: mor gece + güneş sarısı; başlık soru kalıbında ("2027 izin planınız hazır mı?"), kahraman görsel Haz–Eyl yıl çizelgesi (çizim) + "Uyarılar" kartı.
+Çizelge çizimdir; Mustafa gerçek ekran görüntüsünü gönderince `ekran/` altına kırpılıp `.gp` bloğunun yerine konur.
+Modülün doğrulanmış özellikleri (yalnız bunlar yazılır): sürükle-bırak yıl çizelgesi, bölüm sınırı (kişi ya da %), hakkından fazla plan ve 10 gün kuralı (İş K. md. 56) uyarıları, toplu plan (yaz kapanışı, bayram arası), onay, planı izne çevirme (plan puantajı ve bakiyeyi etkilemez), izin kurulu için imza alanlı Excel çizelgesi.
+
+Palet günlüğü (arka arkaya aynı palet kullanma, yenisini buraya ekle):
+- 25.11 Servis Planlama: zümrüt gece
+- 26.11 SGK Raporları: krem + bordo
+- 27.11 Yıllık İzin Planlama: mor + güneş sarısı
