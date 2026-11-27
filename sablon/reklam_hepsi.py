@@ -35,6 +35,8 @@ html,body {{ background:#000; }}
 .chk {{ display:inline-flex; align-items:center; gap:10px; border-radius:999px; font-weight:600; white-space:nowrap; }}
 .chk svg {{ flex:none; }}
 .cta {{ display:flex; align-items:center; justify-content:space-between; }}
+.more {{ display:flex; align-items:center; justify-content:center; gap:12px; border-radius:999px; font-weight:500; white-space:nowrap; border:2px dashed; }}
+.more b {{ font-weight:700; }}
 .cta .t {{ font-family:"Brico"; font-weight:800; font-stretch:75%; line-height:1; }}
 .cta .s {{ font-weight:600; white-space:nowrap; }}
 .cta .go {{ border-radius:50%; display:grid; place-items:center; flex:none; }}
@@ -53,6 +55,12 @@ def underline(w, c1, c2, uid):
             f'<stop offset="0" stop-color="{c1}"/><stop offset="1" stop-color="{c2}"/></linearGradient></defs>'
             f'<path d="M6,24 C{w*.25:.0f},12 {w*.6:.0f},8 {w-8},16" fill="none" stroke="url(#{uid})" stroke-width="9" stroke-linecap="round"/>'
             f'<path d="M{w*.12:.0f},33 C{w*.4:.0f},25 {w*.7:.0f},23 {w*.9:.0f},27" fill="none" stroke="url(#{uid})" stroke-width="5" stroke-linecap="round" opacity=".8"/></svg>')
+MORE_TXT = "ve İK’nın işini kolaylaştıran <b>daha birçok özellik</b>"
+def PLUS(col, s=26):
+    return f'<svg viewBox="0 0 24 24" width="{s}" height="{s}" fill="none" stroke="{col}" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7.5v9M7.5 12h9"/></svg>'
+def more(top, h, fs, col, extra=""):
+    pos = f'position:absolute;left:56px;right:56px;top:{top}px;' if top is not None else ''
+    return f'<div class="more" style="{pos}height:{h}px;font-size:{fs}px;{extra}">{PLUS(col)}<span>{MORE_TXT}</span></div>'
 def page(css, body, H, cls=""):
     return f'<!doctype html><html lang="tr"><head><meta charset="utf-8"><style>{BASE}{css}</style></head><body><div class="cv {cls}" style="height:{H}px">{body}</div></body></html>'
 def cta(top, h, big, small, pad, btn, arrow_col, txt="Kendi verinizle canlı gösterim · 0 541 796 58 10 · Denizli"):
@@ -81,6 +89,8 @@ CSS1 = """
 .grid { display:grid; grid-template-columns:repeat(3,1fr); }
 .cta { border-radius:34px; background:linear-gradient(95deg,#FFC46B 0%,#FF7EB0 58%,#B79CFF 100%); color:#150B3A; box-shadow:0 20px 50px rgba(255,126,176,.30); }
 .cta .go { background:#150B3A; }
+.more { border-color:rgba(255,196,107,.65); color:#F3E9FF; background:rgba(255,196,107,.07); }
+.more b { color:#FFD08A; }
 """
 def v1(story):
     H = 1920 if story else 1350
@@ -102,16 +112,18 @@ def v1(story):
         b += f'<div class="abs hero" style="left:76px;top:{hy}px;width:520px;transform:perspective(1600px) rotateY(9deg) rotateX(2deg);transform-origin:right center"><img src="file://{D}/patron_ekrani.png"></div>'
         ak = "".join(f'<span class="ak" style="padding:11px 16px;font-size:23px">{SWAP("#1B0E3F")}{t}</span>' for t in AKT_KISA)
         b += f'<div class="abs" style="left:632px;top:{hy+4}px;width:400px"><div class="ak-t">{SPARK("#FFC46B",16)}PUANTAJ AKTARIMI</div><div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:14px">{ak}</div></div>'
-        b += f'<div class="abs grid" style="left:56px;right:56px;top:{hy+330}px;gap:13px 14px">{chips(22, 12, 15)}</div>'
-        b += cta(1196, 104, 50, 19, "0 18px 0 34px", 68, "#FFC46B")
+        b += f'<div class="abs grid" style="left:56px;right:56px;top:{hy+318}px;gap:11px 14px">{chips(22, 12, 15)}</div>'
+        b += more(1142, 48, 23, "#FFC46B")
+        b += cta(1206, 104, 50, 19, "0 18px 0 34px", 68, "#FFC46B")
     else:
-        hy = by + 108
-        b += f'<div class="abs hero" style="left:240px;top:{hy}px;width:600px;transform:perspective(1800px) rotateX(6deg);transform-origin:center bottom"><img src="file://{D}/patron_ekrani.png"></div>'
+        hy = by + 100
+        b += f'<div class="abs hero" style="left:255px;top:{hy}px;width:570px;transform:perspective(1800px) rotateX(6deg);transform-origin:center bottom"><img src="file://{D}/patron_ekrani.png"></div>'
         ak = "".join(f'<span class="ak" style="padding:10px 15px;font-size:22px">{SWAP("#1B0E3F", 20)}{t}</span>' for t in AKT_KISA)
-        ay = hy + 362
+        ay = hy + 340
         b += f'<div class="abs" style="left:56px;right:56px;top:{ay}px"><div class="ak-t">{SPARK("#FFC46B",16)}PUANTAJ AKTARIMI</div><div style="display:flex;gap:11px;margin-top:12px;justify-content:space-between">{ak}</div></div>'
-        b += f'<div class="abs grid" style="left:56px;right:56px;top:{ay+104}px;gap:10px 14px">{chips(23, 10, 15)}</div>'
-        b += cta(1476, 106, 54, 21, "0 20px 0 38px", 74, "#FFC46B")
+        b += f'<div class="abs grid" style="left:56px;right:56px;top:{ay+102}px;gap:9px 14px">{chips(23, 10, 15)}</div>'
+        b += more(1422, 48, 24, "#FFC46B")
+        b += cta(1482, 104, 54, 21, "0 20px 0 38px", 74, "#FFC46B")
     return page(CSS1, b, H)
 
 # ======================================================================= V2 — Sarı-siyah
@@ -130,6 +142,7 @@ CSS2 = """
 .cta { border-radius:34px; background:#111; color:#fff; box-shadow:0 22px 50px rgba(90,60,0,.35); }
 .cta .t { color:#FFD21F; }
 .cta .go { background:#FFD21F; }
+.more { border-color:#111; border-width:2.5px; color:#111; }
 """
 def v2(story):
     H = 1920 if story else 1350
@@ -145,11 +158,12 @@ def v2(story):
     b += (f'<div class="abs" style="left:60px;right:56px;top:{by}px;display:flex;align-items:center;gap:22px">'
           f'<span class="br" style="font-size:{bs}px">nilSOFT PDKS</span><span class="rule" style="flex:1"></span>'
           f'<span class="kau" style="font-size:{int(bs*.66)}px;transform:rotate(-4deg) translateY(-4px)">hepsi içinde!</span></div>')
-    fs, py, px, gap, rg = (28, 14, 21, 13, 22) if story else (27, 12, 20, 13, 13)
+    fs, py, px, gap, rg = (28, 14, 21, 13, 16) if story else (27, 12, 20, 13, 13)
     order = [("k", t) for t in AKTARIM] + [("w", t) for t in MODUL]
     rows = [order[i:i+3] for i in range(0, len(order), 3)]
     c = "".join('<div class="cloud" style="gap:%dpx">' % gap + "".join(
         f'<span class="chk {k}" style="padding:{py}px {px}px;font-size:{fs}px">{CHECK("#FFD21F" if k=="k" else "#111", 24)}{t}</span>' for k, t in row) + '</div>' for row in rows)
+    c += '<div class="cloud">' + more(None, 58 if story else 54, 26 if story else 25, "#111", "padding:0 26px;") + '</div>'
     b += f'<div class="abs" style="left:40px;right:40px;top:{by + (130 if story else 104)}px;display:flex;flex-direction:column;gap:{rg}px">{c}</div>'
     if not story: b += cta(1198, 104, 50, 19, "0 18px 0 34px", 68, "#111")
     else:         b += cta(1474, 108, 54, 21, "0 20px 0 38px", 74, "#111")
@@ -181,6 +195,8 @@ CSS3 = """
 .med b { font-family:"Brico"; font-weight:800; font-stretch:75%; letter-spacing:.04em; color:#0E1B3D; line-height:1; }
 .cta { border-radius:34px; background:linear-gradient(95deg,#2563EB 0%,#7C3AED 58%,#DB2777 100%); color:#fff; box-shadow:0 20px 50px rgba(76,60,220,.30); }
 .cta .go { background:#fff; }
+.more { border-color:rgba(124,58,237,.55); color:#0E1B3D; background:rgba(255,255,255,.6); }
+.more b { color:#6D28D9; }
 """
 def hub(cy, ch, cg, lh, fs, R=112):
     cx, xl, xr = 540, 366, 714           # sol sütunun sağ kenarı, sağ sütunun sol kenarı
@@ -227,17 +243,19 @@ def v3(story):
         b += f'<div class="abs hd" style="left:60px;top:{ty}px;font-size:{hs}px"><div>Hepsi tek bir</div><div class="grad">PDKS’de.</div></div>'
         ly = ty + int(hs * 1.8) + 34
         b += f'<div class="abs" style="left:60px;top:{ly}px;display:flex;align-items:center;gap:22px"><span class="lab br" style="font-size:64px;padding:12px 26px 14px">nilSOFT PDKS</span><span class="kau" style="font-size:50px;color:#7C3AED;transform:rotate(-4deg)">hepsi içinde!</span></div>'
-        h, tot = hub(1072, 51, 9, 34, 24)
+        h, tot = hub(1046, 50, 9, 34, 24)
         b += h
-        b += cta(1476, 106, 54, 21, "0 20px 0 38px", 74, "#2563EB")
+        b += more(1422, 48, 24, "#7C3AED")
+        b += cta(1482, 104, 54, 21, "0 20px 0 38px", 74, "#2563EB")
     else:
         ty, hs = top + 84, 104
         b += f'<div class="abs hd" style="left:60px;top:{ty}px;font-size:{hs}px">Hepsi tek bir <span class="grad">PDKS’de.</span></div>'
         ly = ty + int(hs * .9) + 24
         b += f'<div class="abs" style="left:60px;top:{ly}px;display:flex;align-items:center;gap:20px"><span class="lab br" style="font-size:54px;padding:10px 22px 12px">nilSOFT PDKS</span><span class="kau" style="font-size:44px;color:#7C3AED;transform:rotate(-4deg)">hepsi içinde!</span></div>'
-        h, tot = hub(782, 49, 9, 32, 23, R=108)
+        h, tot = hub(770, 48, 9, 32, 23, R=108)
         b += h
-        b += cta(1204, 100, 48, 19, "0 18px 0 34px", 66, "#2563EB")
+        b += more(1140, 48, 23, "#7C3AED")
+        b += cta(1206, 100, 48, 19, "0 18px 0 34px", 66, "#2563EB")
     return page(CSS3, b, H)
 
 JOBS = {"v1": [("R1_aurora_post", v1(False), 1350), ("R1_aurora_story", v1(True), 1920)],
@@ -247,7 +265,7 @@ only = sys.argv[1:] or list(JOBS)
 JS = """(()=>{const r=e=>{const b=e.getBoundingClientRect();return [Math.round(b.left),Math.round(b.top),Math.round(b.right),Math.round(b.bottom)]};
  const all=[...document.querySelectorAll('.chk,.hc,.ak,.gl')].map(r);
  return {hd:[...document.querySelectorAll('.hd')].map(r), minL:Math.min(...all.map(a=>a[0])), maxR:Math.max(...all.map(a=>a[2])), minT:Math.min(...all.map(a=>a[1])), maxB:Math.max(...all.map(a=>a[3])),
-  cta:r(document.querySelector('.cta')), ctaS:r(document.querySelector('.cta .s')), hero:document.querySelector('.hero')?r(document.querySelector('.hero')):null, n:all.length}})()"""
+  cta:r(document.querySelector('.cta')), ctaS:r(document.querySelector('.cta .s')), hero:document.querySelector('.hero')?r(document.querySelector('.hero')):null, more:r(document.querySelector('.more')), n:all.length}})()"""
 with sync_playwright() as p:
     br = p.chromium.launch(); pg = br.new_page(device_scale_factor=1)
     for key in only:
