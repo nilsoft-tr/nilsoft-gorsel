@@ -52,3 +52,11 @@ Palet günlüğü (arka arkaya aynı palet kullanma, yenisini buraya ekle):
 - 25.11 Servis Planlama: zümrüt gece
 - 26.11 SGK Raporları: krem + bordo
 - 27.11 Yıllık İzin Planlama: mor + güneş sarısı
+
+## Sponsorlu reklam: "Hepsi tek bir PDKS'de" (27.11.2026)
+`sablon/reklam_hepsi.py` üç ayrı tasarım üretir (her biri 4:5 gönderi + 9:16 hikâye), çıktılar `reklam/` klasöründe:
+1. Aurora (koyu zemin, turuncu-pembe-mor ışık): Patron Ekranı görüntüsü (`ekran/patron_ekrani.png`, Mustafa'nın kendi reklamından kırpıldı) + puantaj aktarımı hapları + 3×5 modül ızgarası.
+2. Sarı-siyah: yalnız tipografi, 3'erli hap satırları (aktarımlar siyah, modüller beyaz).
+3. Açık zemin, merkez şeması: modüller renk kodlu gruplarla ortadaki nilSOFT PDKS'ye bağlanır.
+Mustafa'nın verdiği liste: Luca, Link (online), Workcube, Logo, Netsis, Mikro aktarımı; Patron ekranı, Servis aracı planlama, Yıllık izin planlama, SGK raporu modülü, Vardiya planlama, Yıllık izin, Evrak, Eğitim, Zimmet, Yol yardımı, Yemekhane, Turnover, Personel mobil, Yönetici mobil, Dinamik QR kod.
+Bunlar reklam görselidir; Mustafa sponsorlu olarak kendisi paylaşır, Metricool'a planlanmaz.
