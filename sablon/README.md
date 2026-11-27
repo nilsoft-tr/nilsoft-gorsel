@@ -60,3 +60,9 @@ Palet günlüğü (arka arkaya aynı palet kullanma, yenisini buraya ekle):
 3. Açık zemin, merkez şeması: modüller renk kodlu gruplarla ortadaki nilSOFT PDKS'ye bağlanır.
 Mustafa'nın verdiği liste: Luca, Link (online), Workcube, Logo, Netsis, Mikro aktarımı; Patron ekranı, Servis aracı planlama, Yıllık izin planlama, SGK raporu modülü, Vardiya planlama, Yıllık izin, Evrak, Eğitim, Zimmet, Yol yardımı, Yemekhane, Turnover, Personel mobil, Yönetici mobil, Dinamik QR kod.
 Bunlar reklam görselidir; Mustafa sponsorlu olarak kendisi paylaşır, Metricool'a planlanmaz.
+
+## "Hepsi tek bir PDKS'de" görsellerinin akışta kullanımı (Mustafa'nın isteği, 27.11.2026: "bunlardan da paylaş haftaya")
+- Pzt 30.11.2026 10:00 gönderi + 13:00 hikâye: sarı-siyah (`reklam/hepsi_tek_pdks_2_sari_siyah_*`) — planlandı.
+- Cum 04.12.2026 10:00 gönderi + 13:00 hikâye: merkez şeması, açık zemin (`reklam/hepsi_tek_pdks_3_merkez_semasi_*`) — planlandı.
+- Aurora (`reklam/hepsi_tek_pdks_1_aurora_*`) akışta henüz kullanılmadı; Mustafa isterse sonraki haftalardan birinde kullanılır.
+Bu hafta (30.11–04.12) haftalık göreve yalnız Çarşamba kalır; o gün "hepsi tek PDKS'de" konusu tekrarlanmaz, tek bir modül anlatılır ve sarı ile açık zemin dışında bir palet seçilir.
